@@ -11,6 +11,12 @@
 
 set $mod Mod4
 
+# Workspaces names
+set $wsp1 1: tty
+set $wsp2 2: emacs
+set $wsp3 3: www
+set $wsp4 4: doc
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 8
@@ -94,10 +100,10 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1: tty
-bindsym $mod+2 workspace 2: emacs
-bindsym $mod+3 workspace 3: www
-bindsym $mod+4 workspace 4: doc
+bindsym $mod+1 workspace $wsp1
+bindsym $mod+2 workspace $wsp2
+bindsym $mod+3 workspace $wsp3
+bindsym $mod+4 workspace $wsp4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -106,10 +112,10 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1: tty
-bindsym $mod+Shift+2 move container to workspace 2: emacs
-bindsym $mod+Shift+3 move container to workspace 3: www
-bindsym $mod+Shift+4 move container to workspace 4: doc
+bindsym $mod+Shift+1 move container to workspace $wsp1
+bindsym $mod+Shift+2 move container to workspace $wsp2
+bindsym $mod+Shift+3 move container to workspace $wsp3
+bindsym $mod+Shift+4 move container to workspace $wsp4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
@@ -169,9 +175,9 @@ exec i3-sensible-terminal
 focus_follows_mouse no # remove focusing on other windows when hovering them
 
 # Default window placements
-assign [class="Google-chrome"] 3: www
-assign [class="Emacs"] 2: emacs
-assign [class="Evince"] 4:doc
+assign [class="Google-chrome"] $wsp3
+assign [class="Emacs"] $wsp2
+assign [class="Evince"] $wsp4
 
 set $mode_personal Launch: [c]hrome 
 bindsym $mod+o mode "$mode_personal"
