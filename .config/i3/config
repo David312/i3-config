@@ -97,7 +97,7 @@ bindsym $mod+a focus parent
 bindsym $mod+1 workspace 1: tty
 bindsym $mod+2 workspace 2: emacs
 bindsym $mod+3 workspace 3: www
-bindsym $mod+4 workspace 4
+bindsym $mod+4 workspace 4: doc
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -109,7 +109,7 @@ bindsym $mod+0 workspace 10
 bindsym $mod+Shift+1 move container to workspace 1: tty
 bindsym $mod+Shift+2 move container to workspace 2: emacs
 bindsym $mod+Shift+3 move container to workspace 3: www
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+4 move container to workspace 4: doc
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
@@ -168,10 +168,10 @@ exec i3-sensible-terminal
 
 focus_follows_mouse no # remove focusing on other windows when hovering them
 
-# all chrome windows are put in workspace 3
+# Default window placements
 assign [class="Google-chrome"] 3: www
-# idem for emacs
 assign [class="Emacs"] 2: emacs
+assign [class="Evince"] 4:doc
 
 set $mode_personal Launch: [c]hrome 
 bindsym $mod+o mode "$mode_personal"
